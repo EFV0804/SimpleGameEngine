@@ -78,3 +78,18 @@ Vector2 Actor::getForward() const
 {
 	return Vector2(Maths::cos(rotation), -Maths::sin(rotation));
 }
+void Actor::processInput(const Uint8* keyState)
+{
+	if (state == Actor::ActorState::Active)
+	{
+		for (auto component : components)
+		{
+			component->processInput(keyState);
+		}
+		actorInput(keyState);
+	}
+}
+void Actor::actorInput(const Uint8* keyState)
+{
+
+}

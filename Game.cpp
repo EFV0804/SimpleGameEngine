@@ -6,6 +6,7 @@
 #include"Timer.h"
 #include"Assets.h"
 #include"Astroid.h"
+#include"Ship.h"
 
 
 bool Game::initialize()
@@ -53,6 +54,14 @@ void Game::processInput()
 	{
 		isRunning = false;
 	}
+
+	//Actor input
+	isUpdatingActors = true;
+	for (auto actor : actors)
+	{
+		actor->processInput(keyboardState);
+	}
+	isUpdatingActors = false;
 }
 void Game::update(float dt)
 {
@@ -124,6 +133,7 @@ void Game::load()
 	Assets::loadTexture(renderer, "D:\\ARTFX\\3D3-Prog\\BLAISE_CAZALET_G\\SimpleGameEngine\\SimpleGameEngine\\Res\\Farback02.png", "Farback02");
 	Assets::loadTexture(renderer, "D:\\ARTFX\\3D3-Prog\\BLAISE_CAZALET_G\\SimpleGameEngine\\SimpleGameEngine\\Res\\Stars.png", "Stars");
 	Assets::loadTexture(renderer, "D:\\ARTFX\\3D3-Prog\\BLAISE_CAZALET_G\\SimpleGameEngine\\SimpleGameEngine\\Res\\Astroid.png", "Astroid");
+	Assets::loadTexture(renderer, "D:\\ARTFX\\3D3-Prog\\BLAISE_CAZALET_G\\SimpleGameEngine\\SimpleGameEngine\\Res\\Ship.png", "Ship");
 
 	const int astroidNumber = 20;
 	for (int i = 0; i < astroidNumber; ++i)
@@ -141,9 +151,15 @@ void Game::load()
 		&Assets::getTexture("ship03"),
 		&Assets::getTexture("ship04"),
 	};
-	Actor* ship = new Actor();
-	AnimSpriteComponent* animatedSprite = new AnimSpriteComponent(ship, animTextures);
+	//Actor* ship = new Actor();
+	//AnimSpriteComponent* animatedSprite = new AnimSpriteComponent(ship, animTextures);
+	//ship->setPosition(Vector2{ 100,300 });
+
+	//Controlled Ship
+	Ship* ship = new Ship();
 	ship->setPosition(Vector2{ 100,300 });
+
+
 
 	//BACKGROUND
 	//far bg

@@ -1,13 +1,2 @@
-﻿  Actor.cpp
-  AnimSpriteComponent.cpp
-  Assets.cpp
-  Astroid.cpp
-  Component.cpp
-  Game.cpp
-  Main.cpp
-  MoveComponent.cpp
-  Renderer.cpp
-  SpriteComponent.cpp
-  Texture.cpp
-  Generating Code...
+﻿  InputComponent.cpp
   SimpleGameEngine.vcxproj -> D:\ARTFX\3D3-Prog\BLAISE_CAZALET_G\SimpleGameEngine\SimpleGameEngine\x64\Debug\SimpleGameEngine.exe

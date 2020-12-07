@@ -1,6 +1,7 @@
 #pragma once
 #include "Vector2.h"
 #include <vector>
+#include<SDL_stdinc.h>
 using std::vector;
 
 class Game;
@@ -34,6 +35,8 @@ public:
 	virtual void updateActor(float dt);
 	void addComponent(Component* component);
 	void removeComponent(Component* component);
+	void processInput(const Uint8* keyState);
+	virtual void actorInput(const Uint8* keyState);
 
 private:
 	Game& game;
