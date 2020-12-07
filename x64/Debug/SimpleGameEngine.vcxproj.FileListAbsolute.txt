@@ -1,0 +1,2 @@
+D:\ARTFX\3D3-Prog\BLAISE_CAZALET_G\SimpleGameEngine\SimpleGameEngine\x64\Debug\SimpleGameEngine.exe
+D:\ARTFX\3D3-Prog\BLAISE_CAZALET_G\SimpleGameEngine\SimpleGameEngine\x64\Debug\SimpleGameEngine.pdb
